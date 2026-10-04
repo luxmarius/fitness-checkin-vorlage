@@ -7,7 +7,8 @@ button{font:inherit;-webkit-tap-highlight-color:transparent}
 /* Use the supplied pixels for the complete green sports pattern and toolbar. */
 .original-header{display:block;width:100%;height:auto;user-select:none;pointer-events:none}
 .erase-old-ring{position:absolute;left:28.36cqw;top:27.51cqw;width:43.39cqw;height:43.39cqw;border-radius:50%;background:var(--green)}
-.status-time{position:absolute;z-index:2;left:9.52cqw;top:5.35cqw;width:12.7cqw;height:4.76cqw;background:var(--green);font-size:4.23cqw;font-weight:650;line-height:4.76cqw;text-align:center;letter-spacing:-.1cqw;font-variant-numeric:tabular-nums}
+.status-clear{position:absolute;z-index:4;top:0;left:0;width:100%;height:13cqw;background:var(--green);pointer-events:none}
+.status-time{display:none}
 .toolbar-button{position:absolute;z-index:5;top:15.13cqw;width:8.25cqw;height:8.25cqw;border:0;border-radius:50%;background:transparent;cursor:pointer}
 .close-button{left:4.02cqw}.share-button{right:4.02cqw}
 .toolbar-button:focus-visible{outline:3px solid #092f24;outline-offset:4px}
@@ -31,5 +32,10 @@ dt svg{flex:none;width:4.23cqw;height:5.19cqw;fill:#8f9dae}
 dt .bottle{height:5.61cqw}
 dd{margin:0;white-space:nowrap;text-align:right;color:#5d687b}
 .toast{position:fixed;z-index:20;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;color:#fff;background:#153e31;font-size:15px;text-align:center;box-shadow:0 4px 24px #0002}
+/* The installed app uses the phone's own status bar instead of the screenshot's. */
+.app-mode body{padding-top:env(safe-area-inset-top,0px);background:var(--green)}
+.app-mode .app-viewport{overflow:hidden;background:var(--paper);min-height:calc(100svh - env(safe-area-inset-top,0px))}
+.app-mode .screen{margin-top:calc(-1 * min(12vw,57.6px))}
+.app-mode .status-time{visibility:hidden}
 @media(prefers-reduced-motion:reduce){.orbit{animation-duration:60s}}
 @media(min-width:481px){.screen{min-height:max(100svh,1040px)}}

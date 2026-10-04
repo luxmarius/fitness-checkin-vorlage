@@ -10,6 +10,14 @@ Nachbau der bereitgestellten Check-in-Ansicht als responsive Website.
 - Check-in-Datum und -Uhrzeit werden beim Öffnen gesetzt
 - Laufender Zähler; ein Klick auf das Symbol oben rechts setzt ausschließlich die Dauer zurück
 
+## Auf dem Handy wie eine App öffnen
+
+**iPhone:** Die Website in Safari öffnen. Im Teilen-Menü des Browsers **Zum Home-Bildschirm** wählen, **Als Web-App öffnen** aktivieren, sofern angeboten, und **Hinzufügen** antippen. Anschließend über das neue Symbol **Check-in** starten.
+
+**Android:** Die Website in Chrome öffnen und im Browser-Menü **Zum Startbildschirm hinzufügen** beziehungsweise **App installieren** wählen. Anschließend über das neue App-Symbol starten.
+
+Beim Start über das Home-Bildschirm-Symbol öffnet sich die Ansicht ohne Adressleiste. Die Systemanzeige für Uhrzeit und Akku bleibt geräteabhängig sichtbar; die nachgebildete Statusleiste wird dann ausgeblendet. Das Symbol oben rechts innerhalb der Website setzt weiterhin nur den Zähler zurück.
+
 ## Bearbeiten
 
 Die komplette Website liegt im Ordner `dist`:

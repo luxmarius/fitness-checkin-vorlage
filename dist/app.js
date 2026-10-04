@@ -1,5 +1,11 @@
 (() => {
   'use strict';
+  const standalone = window.matchMedia('(display-mode: standalone)');
+  function updateDisplayMode() {
+    document.documentElement.classList.toggle('app-mode', standalone.matches || navigator.standalone === true);
+  }
+  updateDisplayMode();
+  standalone.addEventListener('change', updateDisplayMode);
   const openedAt = new Date();
   let durationStartedAt = performance.now();
   const clock = document.getElementById('status-time');
