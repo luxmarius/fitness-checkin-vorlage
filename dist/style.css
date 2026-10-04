@@ -1,0 +1,35 @@
+:root{color-scheme:light;--green:#1a8163;--paper:#fdfdfd;--ink:#080a09;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;background:var(--paper);color:var(--ink)}
+*{box-sizing:border-box}
+body{margin:0}
+button{font:inherit;-webkit-tap-highlight-color:transparent}
+.screen{position:relative;container-type:inline-size;width:100%;max-width:480px;min-height:100svh;margin-inline:auto;overflow:hidden;background:var(--paper)}
+.header{position:absolute;inset:0 0 auto;height:53.44cqw;overflow:hidden;background:var(--green)}
+/* Use the supplied pixels for the complete green sports pattern and toolbar. */
+.original-header{display:block;width:100%;height:auto;user-select:none;pointer-events:none}
+.erase-old-ring{position:absolute;left:28.36cqw;top:27.51cqw;width:43.39cqw;height:43.39cqw;border-radius:50%;background:var(--green)}
+.status-time{position:absolute;z-index:2;left:9.52cqw;top:5.35cqw;width:12.7cqw;height:4.76cqw;background:var(--green);font-size:4.23cqw;font-weight:650;line-height:4.76cqw;text-align:center;letter-spacing:-.1cqw;font-variant-numeric:tabular-nums}
+.toolbar-button{position:absolute;z-index:5;top:15.13cqw;width:8.25cqw;height:8.25cqw;border:0;border-radius:50%;background:transparent;cursor:pointer}
+.close-button{left:4.02cqw}.share-button{right:4.02cqw}
+.toolbar-button:focus-visible{outline:3px solid #092f24;outline-offset:4px}
+.toolbar-button:active{background:#00000012}
+.avatar-frame{position:absolute;z-index:3;left:29.735cqw;top:29.1cqw;width:40.635cqw;height:40.635cqw;padding:2.328cqw;border-radius:50%;background:var(--green)}
+.portrait{position:relative;width:100%;height:100%;overflow:hidden;border-radius:50%;background:var(--green)}
+.portrait img{position:absolute;width:277.941176%;max-width:none;height:auto;left:-89.117647%;top:-87.352941%;user-select:none;pointer-events:none}
+.orbit{position:absolute;z-index:4;left:28.36cqw;top:27.725cqw;width:43.386cqw;height:43.386cqw;overflow:visible;pointer-events:none;animation:orbit 18s linear infinite;transform-origin:center}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.details{position:relative;margin-top:49.418cqw;min-height:167.3cqw;border-radius:4.23cqw 4.23cqw 0 0;background:var(--paper)}
+.member{padding-top:23.81cqw;text-align:center}
+h1{margin:0;white-space:nowrap;font-size:4.5cqw;line-height:1.35;font-weight:700;letter-spacing:-.065cqw}
+.checkin{display:flex;justify-content:center;align-items:baseline;gap:.75cqw;white-space:nowrap;margin:1.55cqw 0 0;font-size:4.021cqw;line-height:1.25;font-weight:700;color:#21694f;letter-spacing:-.045cqw}
+.separator{margin-inline:1.8cqw}
+#duration{font-variant-numeric:tabular-nums;letter-spacing:.18cqw}
+.facts{margin:5.75cqw 0 0}
+.fact{display:flex;align-items:center;justify-content:space-between;min-height:14.55cqw;gap:3.8cqw;padding:0 4.13cqw 0 5.08cqw;border-bottom:1px solid #e3e3e7;font-size:4.021cqw;line-height:1.3;letter-spacing:.015cqw}
+.fact:last-child{border-bottom:0}
+dt{display:flex;align-items:center;gap:3.17cqw;white-space:nowrap;color:#30353a}
+dt svg{flex:none;width:4.23cqw;height:5.19cqw;fill:#8f9dae}
+dt .bottle{height:5.61cqw}
+dd{margin:0;white-space:nowrap;text-align:right;color:#5d687b}
+.toast{position:fixed;z-index:20;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);padding:12px 18px;border-radius:12px;color:#fff;background:#153e31;font-size:15px;text-align:center;box-shadow:0 4px 24px #0002}
+@media(prefers-reduced-motion:reduce){.orbit{animation-duration:60s}}
+@media(min-width:481px){.screen{min-height:max(100svh,1040px)}}
