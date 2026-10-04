@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const openedAt = new Date();
-  const openedTick = performance.now();
+  let durationStartedAt = performance.now();
   const clock = document.getElementById('status-time');
   const checkin = document.getElementById('checkin-time');
   const duration = document.getElementById('duration');
@@ -17,13 +17,13 @@
     const now = new Date();
     clock.textContent = timeFormat.format(now);
     clock.dateTime = now.toISOString();
-    const seconds = Math.max(0, Math.floor((performance.now() - openedTick) / 1000));
+    const seconds = Math.max(0, Math.floor((performance.now() - durationStartedAt) / 1000));
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor(seconds / 60) % 60;
     duration.textContent = `${hours} : ${String(minutes).padStart(2, '0')} : ${String(seconds % 60).padStart(2, '0')}`;
   }
   update();
-  setInterval(update, 1000);
+  let timer = setInterval(update, 1000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) update(); });
   let toastTimer;
   function notify(message) {
@@ -33,15 +33,11 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { toast.hidden = true; }, 3500);
   }
-  document.getElementById('share').addEventListener('click', async () => {
-    const data = { title: 'Fitness Check-in', url: location.href };
-    try {
-      if (navigator.share) await navigator.share(data);
-      else if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(location.href);
-        notify('Link kopiert');
-      } else notify('Du kannst den Link aus der Adressleiste teilen.');
-    } catch (error) { if (error.name !== 'AbortError') notify('Teilen ist gerade nicht möglich.'); }
+  document.getElementById('share').addEventListener('click', () => {
+    durationStartedAt = performance.now();
+    clearInterval(timer);
+    update();
+    timer = setInterval(update, 1000);
   });
   document.getElementById('close').addEventListener('click', () => {
     if (history.length > 1) history.back();
